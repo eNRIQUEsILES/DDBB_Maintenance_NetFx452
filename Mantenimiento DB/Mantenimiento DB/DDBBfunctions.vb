@@ -35,7 +35,7 @@ Module DDBBfunctions
         If Form1.conn.State = ConnectionState.Open Then
             Try
                 My.Computer.FileSystem.CopyFile(Form1.PathDDBB + Form1.datasource_name, Form1.BackupPath + Form1.datasource_name)
-                My.Computer.FileSystem.RenameFile(Form1.BackupPath + Form1.datasource_name, Form1._name + fecha + ".mdb")
+                My.Computer.FileSystem.RenameFile(Form1.BackupPath + Form1.datasource_name, Form1._name + "_" + fecha + ".mdb")
             Catch ex As Exception
                 Form1.backup_fail = True
             End Try
