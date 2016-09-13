@@ -15,6 +15,9 @@ Public Class Form1
     Public BackupPath As String = IniFile.GetString("DDBB", "BackupPath", "")
     Public datasource As String = IniFile.GetString("DDBB", "Type", "")
     Public datasource_name As String = IniFile.GetString("DDBB", "File", "")
+    Public WorkGroup As String = IniFile.GetString("DDBB", "Workgroup", "")
+    Public User_ID As String = IniFile.GetString("DDBB", "UserID", "")
+    Public PassWord As String = IniFile.GetString("DDBB", "Password", "")
     Public _name As String = IniFile.GetString("DDBB", "Name", "")
     Public paso1 As String = IniFile.GetString("PROGRESS", "Paso1", "")
     Public paso2 As String = IniFile.GetString("PROGRESS", "Paso2", "")
@@ -29,7 +32,7 @@ Public Class Form1
     Public error5 As String = IniFile.GetString("ERROR", "Error5", "")
     Public backup_fail As Boolean
     Public emptyfail As Boolean
-    Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Persist Security Info=False")
+    Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord $")
     Public _step As String
 
 
