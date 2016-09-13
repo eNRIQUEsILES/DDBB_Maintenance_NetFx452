@@ -32,7 +32,7 @@ Public Class Form1
     Public error5 As String = IniFile.GetString("ERROR", "Error5", "")
     Public backup_fail As Boolean
     Public emptyfail As Boolean
-    Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord $")
+    Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord & ";")
     Public _step As String
 
 
