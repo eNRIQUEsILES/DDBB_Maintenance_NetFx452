@@ -71,4 +71,16 @@ Module DDBBfunctions
         'End If
     End Sub
 
+    Public Sub DDBBCompact()
+        Form1.Show()
+        Dim jro As JRO.JetEngine
+        jro = New JRO.JetEngine()
+        Try
+            jro.CompactDatabase("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & Form1.PathDDBB + Form1.datasource_name & "", "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & Form1.PathDDBB & " + New + " & Form1.datasource_name & ";Jet OLEDB:Engine Type=5")
+            Form1._Compact = True
+        Catch ex As Exception
+            Form1._Compact = False
+        End Try
+    End Sub
+
 End Module

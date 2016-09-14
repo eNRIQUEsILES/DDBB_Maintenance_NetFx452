@@ -86,10 +86,10 @@ Partial Class Form1
         Me.CheckedListBox.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckedListBox.ForeColor = System.Drawing.Color.White
         Me.CheckedListBox.FormattingEnabled = True
-        Me.CheckedListBox.Items.AddRange(New Object() {"Conectado a DB", "Backup DB Realizado", "Vaciado DB Realizado", "Desconectado de DB", "Operación Finalizada"})
+        Me.CheckedListBox.Items.AddRange(New Object() {"Conectado a DB", "Backup DB Realizado", "Vaciado DB Realizado", "DB Compactada", "Desconectado de DB", "Operación Finalizada"})
         Me.CheckedListBox.Location = New System.Drawing.Point(12, 281)
         Me.CheckedListBox.Name = "CheckedListBox"
-        Me.CheckedListBox.Size = New System.Drawing.Size(263, 139)
+        Me.CheckedListBox.Size = New System.Drawing.Size(263, 166)
         Me.CheckedListBox.TabIndex = 17
         '
         'Anagrama2
@@ -97,7 +97,7 @@ Partial Class Form1
         Me.Anagrama2.Image = CType(resources.GetObject("Anagrama2.Image"), System.Drawing.Image)
         Me.Anagrama2.Location = New System.Drawing.Point(281, 281)
         Me.Anagrama2.Name = "Anagrama2"
-        Me.Anagrama2.Size = New System.Drawing.Size(120, 139)
+        Me.Anagrama2.Size = New System.Drawing.Size(120, 166)
         Me.Anagrama2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Anagrama2.TabIndex = 18
         Me.Anagrama2.TabStop = False
@@ -121,7 +121,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SkyBlue
-        Me.ClientSize = New System.Drawing.Size(417, 432)
+        Me.ClientSize = New System.Drawing.Size(417, 455)
         Me.Controls.Add(Me.Anagrama2)
         Me.Controls.Add(Me.CheckedListBox)
         Me.Controls.Add(Me.ProgressBar2)

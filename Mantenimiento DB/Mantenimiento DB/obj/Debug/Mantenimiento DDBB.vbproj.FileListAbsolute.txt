@@ -21,3 +21,6 @@ C:\Users\siles001\MiGit\DDBB_Maintenance_NetFx452\Mantenimiento DB\Mantenimiento
 C:\Users\siles001\MiGit\DDBB_Maintenance_NetFx452\Mantenimiento DB\Mantenimiento DB\obj\Debug\Mantenimiento_DB.Resources.resources
 C:\Users\siles001\MiGit\DDBB_Maintenance_NetFx452\Mantenimiento DB\Mantenimiento DB\obj\Debug\Mantenimiento DDBB.vbproj.GenerateResource.Cache
 C:\Users\siles001\MiGit\DDBB_Maintenance_NetFx452\Mantenimiento DB\Mantenimiento DB\obj\Debug\Mantenimiento DDBB.vbprojResolveAssemblyReference.cache
+C:\Users\siles001\MiGit\DDBB_Maintenance_NetFx452\Mantenimiento DB\Mantenimiento DB\obj\Debug\Interop.ADODB.dll
+C:\Users\siles001\MiGit\DDBB_Maintenance_NetFx452\Mantenimiento DB\Mantenimiento DB\obj\Debug\Interop.JRO.dll
+C:\Users\siles001\MiGit\DDBB_Maintenance_NetFx452\Mantenimiento DB\Mantenimiento DB\obj\Debug\Mantenimiento DDBB.vbproj.ResolveComReference.cache
