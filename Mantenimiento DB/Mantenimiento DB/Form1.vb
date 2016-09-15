@@ -132,7 +132,7 @@ Public Class Form1
             End If
             If i = 8 Then
                 _step = paso7
-                Thread.Sleep(2000)
+                Thread.Sleep(3000)
                 closeAPP()
             End If
             LblProgress_DB.Text = _step
