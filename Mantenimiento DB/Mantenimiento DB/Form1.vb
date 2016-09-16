@@ -19,6 +19,8 @@ Public Class Form1
     Public User_ID As String = IniFile.GetString("DDBB", "UserID", "")
     Public PassWord As String = IniFile.GetString("DDBB", "Password", "")
     Public _name As String = IniFile.GetString("DDBB", "Name", "")
+    Public PathAPP As String = IniFile.GetString("DDBB", "PathApp", "")
+    Public APP As String = IniFile.GetString("DDBB", "App", "")
     Public paso1 As String = IniFile.GetString("PROGRESS", "Paso1", "")
     Public paso2 As String = IniFile.GetString("PROGRESS", "Paso2", "")
     Public paso3 As String = IniFile.GetString("PROGRESS", "Paso3", "")
@@ -40,6 +42,7 @@ Public Class Form1
 
 
     Private Sub TestDoEvents()
+        Task_Kill()
         Dim n As Byte
         Dim valorn As Boolean
         For i As Integer = 0 To 8
@@ -53,7 +56,7 @@ Public Class Form1
             If i = 2 And conn.State = ConnectionState.Open And Not My.Computer.FileSystem.FileExists(BackupPath + datasource_name + fecha + ".mdb") Then
                 n = 0
                 valorn = True
-                ProgressBar2.PerformStep()
+                'ProgressBar2.PerformStep()
                 _step = paso2
                 DDBBbackup()
             ElseIf i = 2 And conn.State = ConnectionState.Open And My.Computer.FileSystem.FileExists(BackupPath + datasource_name + fecha + ".mdb") Then
@@ -133,6 +136,7 @@ Public Class Form1
             If i = 8 Then
                 _step = paso7
                 Thread.Sleep(3000)
+                Shell(PathAPP + APP, AppWinStyle.MaximizedFocus)
                 closeAPP()
             End If
             LblProgress_DB.Text = _step

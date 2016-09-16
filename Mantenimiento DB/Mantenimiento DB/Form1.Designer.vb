@@ -56,10 +56,10 @@ Partial Class Form1
         Me.TextBox_datasource.Location = New System.Drawing.Point(81, 133)
         Me.TextBox_datasource.Name = "TextBox_datasource"
         Me.TextBox_datasource.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.TextBox_datasource.Size = New System.Drawing.Size(320, 32)
+        Me.TextBox_datasource.Size = New System.Drawing.Size(711, 32)
         Me.TextBox_datasource.TabIndex = 14
         Me.TextBox_datasource.Text = "datasource_name"
-        Me.TextBox_datasource.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox_datasource.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LblProgress_DB
         '
@@ -75,7 +75,7 @@ Partial Class Form1
         '
         Me.ProgressBar2.Location = New System.Drawing.Point(12, 239)
         Me.ProgressBar2.Name = "ProgressBar2"
-        Me.ProgressBar2.Size = New System.Drawing.Size(389, 23)
+        Me.ProgressBar2.Size = New System.Drawing.Size(780, 23)
         Me.ProgressBar2.Step = 30
         Me.ProgressBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar2.TabIndex = 16
@@ -89,15 +89,15 @@ Partial Class Form1
         Me.CheckedListBox.Items.AddRange(New Object() {"Conectado a DB", "Backup DB Realizado", "Vaciado DB Realizado", "DB Compactada", "Desconectado de DB", "Operación Finalizada"})
         Me.CheckedListBox.Location = New System.Drawing.Point(12, 281)
         Me.CheckedListBox.Name = "CheckedListBox"
-        Me.CheckedListBox.Size = New System.Drawing.Size(263, 166)
+        Me.CheckedListBox.Size = New System.Drawing.Size(638, 166)
         Me.CheckedListBox.TabIndex = 17
         '
         'Anagrama2
         '
         Me.Anagrama2.Image = CType(resources.GetObject("Anagrama2.Image"), System.Drawing.Image)
-        Me.Anagrama2.Location = New System.Drawing.Point(281, 281)
+        Me.Anagrama2.Location = New System.Drawing.Point(656, 281)
         Me.Anagrama2.Name = "Anagrama2"
-        Me.Anagrama2.Size = New System.Drawing.Size(120, 166)
+        Me.Anagrama2.Size = New System.Drawing.Size(136, 166)
         Me.Anagrama2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Anagrama2.TabIndex = 18
         Me.Anagrama2.TabStop = False
@@ -105,7 +105,7 @@ Partial Class Form1
         'LogoKOSTAL2
         '
         Me.LogoKOSTAL2.Image = CType(resources.GetObject("LogoKOSTAL2.Image"), System.Drawing.Image)
-        Me.LogoKOSTAL2.Location = New System.Drawing.Point(64, 12)
+        Me.LogoKOSTAL2.Location = New System.Drawing.Point(269, 12)
         Me.LogoKOSTAL2.Name = "LogoKOSTAL2"
         Me.LogoKOSTAL2.Size = New System.Drawing.Size(279, 72)
         Me.LogoKOSTAL2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -121,7 +121,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SkyBlue
-        Me.ClientSize = New System.Drawing.Size(417, 455)
+        Me.ClientSize = New System.Drawing.Size(804, 455)
         Me.Controls.Add(Me.Anagrama2)
         Me.Controls.Add(Me.CheckedListBox)
         Me.Controls.Add(Me.ProgressBar2)

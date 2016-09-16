@@ -89,4 +89,10 @@ Module DDBBfunctions
         My.Computer.FileSystem.MoveFile(Form1.BackupPath + Form1.datasource_name, Form1.PathDDBB + Form1.datasource_name)
     End Sub
 
+    Public Sub Task_Kill()
+        For Each Process_p In System.Diagnostics.Process.GetProcessesByName("MQB.exe")
+            Process_p.Kill()
+        Next
+    End Sub
+
 End Module
