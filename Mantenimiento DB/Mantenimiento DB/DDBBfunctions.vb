@@ -51,7 +51,7 @@ Module DDBBfunctions
             Dim Clean As String
             cmd.Connection = Form1.conn
             cmd.CommandType = CommandType.Text
-            Clean = "DELETE * FROM Results WHERE INSTANT <#" & Form1.FechaHoy & "#;"
+            Clean = "DELETE * FROM Results" ' WHERE INSTANT <#" & Form1.FechaHoy & "#"
             cmd.CommandText = Clean
             Try
                 cmd.ExecuteNonQuery()
