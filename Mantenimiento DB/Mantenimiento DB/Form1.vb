@@ -39,6 +39,7 @@ Public Class Form1
     Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord & ";")
     Public _step As String
     Public _Compact As Boolean
+    Public FechaHoy As String = Format(Today, "dd/mm/yyyy")
 
 
     Private Sub TestDoEvents()
