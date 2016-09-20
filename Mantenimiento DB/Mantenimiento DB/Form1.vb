@@ -39,13 +39,15 @@ Public Class Form1
     Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord & ";")
     Public _step As String
     Public _Compact As Boolean
-    Public FechaHoy As String = Format(Today, "dd/mm/yyyy")
+    Public FechaHoy As String = Format(Today, "dd/MM/yyyy")
 
 
     Private Sub TestDoEvents()
-        Task_Kill()
+        'Task_Kill()
+        MessageBox.Show("Por Favor, Cierre la aplicación y pulse Aceptar. Se va a ejecutar un software para el vaciado de la Base de Datos", "APW1")
         Dim n As Byte
         Dim valorn As Boolean
+        Me.Show()
         For i As Integer = 0 To 8
             'CONEXIÓN DDBB
             If i = 1 Then

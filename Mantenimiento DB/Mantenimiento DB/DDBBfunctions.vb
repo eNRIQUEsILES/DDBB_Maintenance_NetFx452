@@ -51,7 +51,7 @@ Module DDBBfunctions
             Dim Clean As String
             cmd.Connection = Form1.conn
             cmd.CommandType = CommandType.Text
-            Clean = "DELETE * FROM Results" ' WHERE INSTANT <#" & Form1.FechaHoy & "#"
+            Clean = "DELETE * FROM Results WHERE Instant <#" & Form1.FechaHoy & "#"
             cmd.CommandText = Clean
             Try
                 cmd.ExecuteNonQuery()
@@ -90,9 +90,17 @@ Module DDBBfunctions
     End Sub
 
     Public Sub Task_Kill()
-        For Each Process_p In System.Diagnostics.Process.GetProcessesByName("MQB.exe")
-            Process_p.Kill()
-        Next
+        Try
+            Dim APPTest() As Process = Process.GetProcessesByName("MQB.exe")
+            For Each Process As Process In APPTest
+                Process.Kill()
+            Next
+            'For Each Process_p In System.Diagnostics.Process.GetProcessesByName("MQB.exe")
+            'Process_p.Kill()
+            'Next
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 End Module
