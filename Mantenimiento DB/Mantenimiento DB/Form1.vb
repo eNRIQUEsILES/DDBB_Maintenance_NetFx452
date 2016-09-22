@@ -2,14 +2,23 @@
 'Maintenance Expert Team APW
 ' (c) Kostal Eléctrica S.A.  2016
 
-'Imports
+#Region "IMPORTS__________________________________________________________________________"
 Imports System.Threading
 Imports System.Windows.Forms
 Imports System.Data.OleDb
+#End Region
 
 Public Class Form1
 
-    'Initializing System Var
+#Region "PUBLIC MEMBERS___________________________________________________________________"
+    Public backup_fail As Boolean
+    Public emptyfail As Boolean
+    Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord & ";")
+    Public _step As String
+    Public _Compact As Boolean
+#End Region
+
+#Region "CONSTANTS & ENUMS________________________________________________________________"
     Public IniFile As New Ini(AppDomain.CurrentDomain.BaseDirectory + "Data.ini")
     Public PathDDBB As String = IniFile.GetString("DDBB", "Path", "")
     Public BackupPath As String = IniFile.GetString("DDBB", "BackupPath", "")
@@ -34,13 +43,8 @@ Public Class Form1
     Public error4 As String = IniFile.GetString("ERROR", "Error4", "")
     Public error5 As String = IniFile.GetString("ERROR", "Error5", "")
     Public error6 As String = IniFile.GetString("ERROR", "Error6", "")
-    Public backup_fail As Boolean
-    Public emptyfail As Boolean
-    Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord & ";")
-    Public _step As String
-    Public _Compact As Boolean
     Public FechaHoy As String = Format(Today, "dd/MM/yyyy")
-
+#End Region
 
     Private Sub TestDoEvents()
         'Task_Kill()
