@@ -86,8 +86,8 @@ Module DDBBfunctions
         Dim JRO As New JRO.JetEngine
         Dim DDBB_source As String, DDBB_destiny As String
         My.Application.DoEvents()
-        DDBB_source = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & SourcePath
-        DDBB_destiny = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & DestinyPath & " ;Jet OLEDB:Engine Type=5"
+        DDBB_source = "Provider=Microsoft.Jet.OLEDB.3.5;Data Source=" & SourcePath
+        DDBB_destiny = "Provider=Microsoft.Jet.OLEDB.3.5;Data Source=" & DestinyPath & " ;Jet OLEDB:Engine Type=5"
         JRO.CompactDatabase(DDBB_source, DDBB_destiny)
         Form1._Compact = True
         My.Computer.FileSystem.DeleteFile(Form1.PathDDBB + Form1.datasource_name)
