@@ -13,13 +13,12 @@ Public Class Form1
 #Region "PUBLIC MEMBERS___________________________________________________________________"
     Public backup_fail As Boolean
     Public emptyfail As Boolean
-    Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord & ";")
     Public _step As String
     Public _Compact As Boolean
+    Public IniFile As New Ini(AppDomain.CurrentDomain.BaseDirectory + "Data.ini")
 #End Region
 
-#Region "CONSTANTS & ENUMS________________________________________________________________"
-    Public IniFile As New Ini(AppDomain.CurrentDomain.BaseDirectory + "Data.ini")
+#Region "CONSTANTS AND ENUMS______________________________________________________________"
     Public PathDDBB As String = IniFile.GetString("DDBB", "Path", "")
     Public BackupPath As String = IniFile.GetString("DDBB", "BackupPath", "")
     Public datasource As String = IniFile.GetString("DDBB", "Type", "")
@@ -44,8 +43,10 @@ Public Class Form1
     Public error5 As String = IniFile.GetString("ERROR", "Error5", "")
     Public error6 As String = IniFile.GetString("ERROR", "Error6", "")
     Public FechaHoy As String = Format(Today, "dd/MM/yyyy")
+    Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord & ";")
 #End Region
 
+#Region "SEQUENCE_________________________________________________________________________"
     Private Sub TestDoEvents()
         'Task_Kill()
         MessageBox.Show("Por Favor, Cierre la aplicación y pulse Aceptar. Se va a ejecutar un software para el vaciado de la Base de Datos", "APW1")
@@ -153,14 +154,15 @@ Public Class Form1
             Thread.Sleep(3000)
         Next
     End Sub
+#End Region
 
-
+#Region "INITIALIZATION SEQUENCE__________________________________________________________"
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Show()
         TextBox_datasource.Text = PathDDBB + datasource_name
         Lbl_datasource.Text = datasource
         TestDoEvents()
     End Sub
-
+#End Region
 
 End Class

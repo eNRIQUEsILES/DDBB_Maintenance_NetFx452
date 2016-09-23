@@ -2,13 +2,18 @@
 'Maintenance Expert Team APW
 ' (c) Kostal Eléctrica S.A.  2016
 
+#Region "IMPORTS__________________________________________________________________________"
 'Imports
 Imports System.Data.OleDb
+#End Region
 
 Module DDBBfunctions
 
+#Region "PUBLIC MEMBERS_______________________________________________________________"
     Public fecha As String = Format(Today, "dd-MM-yyyy")
+#End Region
 
+#Region "PUBLIC METHODS___________________________________________________________________"
     Public Sub DDBBconnect()
         Form1.Show()
         Try
@@ -102,5 +107,6 @@ Module DDBBfunctions
 
         End Try
     End Sub
+#End Region
 
 End Module

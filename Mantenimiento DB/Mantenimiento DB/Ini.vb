@@ -2,7 +2,7 @@
 'Maintenance Expert Team APW
 ' (c) Kostal Eléctrica S.A.  2016
 
-
+#Region "INITIALIZATION SEQUENCE__________________________________________________________"
 Public Class Ini
     Private Declare Ansi Function GetPrivateProfileString _
  Lib "kernel32.dll" Alias "GetPrivateProfileStringA" _
@@ -27,19 +27,16 @@ Public Class Ini
       ByVal lpKeyName As Integer, ByVal lpString As Integer,
       ByVal lpFileName As String) As Integer
     Dim strFilename As String
-
     ' Constructor, accepting a filename
     Public Sub New(ByVal Filename As String)
         strFilename = Filename
     End Sub
-
     ' Read-only filename property
     ReadOnly Property FileName() As String
         Get
             Return strFilename
         End Get
     End Property
-
     Public Function GetString(ByVal Section As String, ByVal Key As String, ByVal [Default] As String) As String
         ' Returns a string from your INI file
         Dim intCharCount As Integer
@@ -51,35 +48,30 @@ Public Class Ini
             Return Nothing
         End If
     End Function
-
     Public Function GetInteger(ByVal Section As String,
       ByVal Key As String, ByVal [Default] As Integer) As Integer
         ' Returns an integer from your INI file
         Return GetPrivateProfileInt(Section, Key,
            [Default], strFilename)
     End Function
-
     Public Function GetBoolean(ByVal Section As String,
       ByVal Key As String, ByVal [Default] As Boolean) As Boolean
         ' Returns a boolean from your INI file
         Return (GetPrivateProfileInt(Section, Key,
            CInt([Default]), strFilename) = 1)
     End Function
-
     Public Sub WriteString(ByVal Section As String,
       ByVal Key As String, ByVal Value As String)
         ' Writes a string to your INI file
         WritePrivateProfileString(Section, Key, Value, strFilename)
         Flush()
     End Sub
-
     Public Sub WriteInteger(ByVal Section As String,
       ByVal Key As String, ByVal Value As Integer)
         ' Writes an integer to your INI file
         WriteString(Section, Key, CStr(Value))
         Flush()
     End Sub
-
     Public Sub WriteBoolean(ByVal Section As String, ByVal Key As String, ByVal Value As Boolean)
         ' Writes a boolean to your INI file
         Dim Sendval As String = "0"
@@ -87,9 +79,9 @@ Public Class Ini
         WriteString(Section, Key, Sendval)
         Flush()
     End Sub
-
     Private Sub Flush()
         ' Stores all the cached changes to your INI file
         FlushPrivateProfileString(0, 0, 0, strFilename)
     End Sub
 End Class
+#End Region
