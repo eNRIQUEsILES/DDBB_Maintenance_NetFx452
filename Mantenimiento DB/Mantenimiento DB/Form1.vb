@@ -61,18 +61,20 @@ Public Class Form1
                 DDBBconnect()
             End If
             'BACKUP DDBB
-            If i = 2 And conn.State = ConnectionState.Open And Not My.Computer.FileSystem.FileExists(BackupPath + datasource_name + fecha + ".mdb") Then
+            If i = 2 And conn.State = ConnectionState.Open And Not My.Computer.FileSystem.FileExists(BackupPath + _name + "_" + fecha + ".mdb") Then
                 n = 0
                 valorn = True
                 'ProgressBar2.PerformStep()
                 _step = paso2
                 DDBBbackup()
-            ElseIf i = 2 And conn.State = ConnectionState.Open And My.Computer.FileSystem.FileExists(BackupPath + datasource_name + fecha + ".mdb") Then
+            ElseIf i = 2 And conn.State = ConnectionState.Open And My.Computer.FileSystem.FileExists(BackupPath + _name + "_" + fecha + ".mdb") Then
+                Kill(BackupPath + _name + "_" + fecha + ".mdb")
                 n = 0
                 valorn = True
-                _step = error5
-                MessageBox.Show("Backup ya existe!!, Avisar a equipo Expert""APW")
-                closeAPP()
+                _step = paso2
+                'MessageBox.Show("Backup ya existe!!, Avisar a equipo Expert""APW")
+                'closeAPP()
+                DDBBbackup()
             ElseIf i = 2 And conn.State = ConnectionState.Closed Then
                 n = 0
                 valorn = False
