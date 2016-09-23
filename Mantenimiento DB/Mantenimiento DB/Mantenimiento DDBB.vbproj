@@ -179,6 +179,15 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="DAO">
+      <Guid>{00025E04-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="JRO">
       <Guid>{AC3B8B4C-B6CA-11D1-9F31-00C04FC29D52}</Guid>
       <VersionMajor>2</VersionMajor>
