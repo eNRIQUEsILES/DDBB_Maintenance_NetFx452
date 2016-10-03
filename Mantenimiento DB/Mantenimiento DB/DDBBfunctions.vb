@@ -79,15 +79,16 @@ Module DDBBfunctions
 
     Public Sub DDBBCompact()
         Form1.Show()
+        Dim JRO As JRO.JetEngine
+        JRO = New JRO.JetEngine
         Dim SourcePath As String
         Dim DestinyPath As String
         SourcePath = Form1.PathDDBB + Form1.datasource_name
         DestinyPath = Form1.BackupPath + Form1.datasource_name
-        Dim JRO As New JRO.JetEngine
         Dim DDBB_source As String, DDBB_destiny As String
-        My.Application.DoEvents()
-        DDBB_source = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & SourcePath & ";Jet OLEDB:Database Password=actor"
-        DDBB_destiny = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & DestinyPath & " ;Jet OLEDB:Engine Type=5;Jet OLEDB:Database Password=actor"
+        'My.Application.DoEvents()
+        DDBB_source = "Provider=Microsoft.Jet.OLEDB.3.5;Data Source=" & SourcePath & ";Jet OLEDB:Engine Type=4"
+        DDBB_destiny = "Provider=Microsoft.Jet.OLEDB.3.5;Data Source=" & DestinyPath & " ;Jet OLEDB:Engine Type=4"
         JRO.CompactDatabase(DDBB_source, DDBB_destiny)
         Form1._Compact = True
         My.Computer.FileSystem.DeleteFile(Form1.PathDDBB + Form1.datasource_name)
