@@ -102,7 +102,7 @@ Public Class Form1
                 valorn = True
                 ProgressBar2.PerformStep()
                 _step = paso4
-                DDBBCompact()
+                DDBBCompact2()
             ElseIf i = 4 And emptyfail = True Then
                 _step = error3
                 n = 2
