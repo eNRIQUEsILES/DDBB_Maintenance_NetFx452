@@ -109,10 +109,10 @@ Module DDBBfunctions
         Dim DestinyPath As String
         SourcePath = Form1.PathDDBB + Form1.datasource_name
         DestinyPath = Form1.BackupPath + Form1.datasource_name
-        Dim DDBB_source As String, DDBB_destiny As String
-        DDBB_source = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & SourcePath & ";Jet OLEDB:Engine Type=5"
-        DDBB_destiny = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & DestinyPath & " ;Jet OLEDB:Engine Type=5"
-        dao.CompactDatabase(DDBB_source, DDBB_destiny, "dbLangGeneral ;pwd=kaos, dbVersion30, pwd=kaos")
+        'Dim DDBB_source As String, DDBB_destiny As String
+        'DDBB_source = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & SourcePath & ";Jet OLEDB:Engine Type=5"
+        'DDBB_destiny = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & DestinyPath & " ;Jet OLEDB:Engine Type=5"
+        dao.CompactDatabase(SourcePath, DestinyPath, "dbLangGeneral ;pwd=kaos, dbVersion30, pwd=kaos")
         Form1._Compact = True
         My.Computer.FileSystem.DeleteFile(Form1.PathDDBB + Form1.datasource_name)
         My.Computer.FileSystem.MoveFile(Form1.BackupPath + Form1.datasource_name, Form1.PathDDBB + Form1.datasource_name)
@@ -137,12 +137,24 @@ Module DDBBfunctions
         End Try
     End Function
 
+    Public Sub DDBBCompact3()
+        Dim oApp As Access.Application
+        Set oApp = CreateObject("Access.Application")
+        Dim SourcePath As String
+        Dim DestinyPath As String
+        SourcePath = Form1.PathDDBB + Form1.datasource_name
+        DestinyPath = Form1.BackupPath + Form1.datasource_name
+        oApp.DBEngine.CompactDatabase(SourcePath, DestinyPath)
+        Form1._Compact = True
+        My.Computer.FileSystem.DeleteFile(Form1.PathDDBB + Form1.datasource_name)
+        My.Computer.FileSystem.MoveFile(Form1.BackupPath + Form1.datasource_name, Form1.PathDDBB + Form1.datasource_name)
+    End Sub
+
     Public Sub ClosePrgDB()
         On Error Resume Next
         _programDB.Close()
         _programWS.Close()
     End Sub
-
 
     Public Sub Task_Kill()
         Try
