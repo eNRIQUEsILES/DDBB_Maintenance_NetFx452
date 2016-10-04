@@ -42,7 +42,7 @@ Public Class Form1
     Public error4 As String = IniFile.GetString("ERROR", "Error4", "")
     Public error5 As String = IniFile.GetString("ERROR", "Error5", "")
     Public error6 As String = IniFile.GetString("ERROR", "Error6", "")
-    Public FechaHoy As String = Format(Today, "dd/MM/yyyy")
+    Public FechaHoy As String = Format(Today, "dd-MM-yyyy")
     Public conn As New OleDb.OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & PathDDBB + datasource_name & ";Jet OLEDB:System Database=" & PathDDBB + WorkGroup & ";User ID=" & User_ID & ";Password=" & PassWord & ";")
 #End Region
 
@@ -61,14 +61,14 @@ Public Class Form1
                 DDBBconnect()
             End If
             'BACKUP DDBB
-            If i = 2 And conn.State = ConnectionState.Open And Not My.Computer.FileSystem.FileExists(BackupPath + _name + "_" + fecha + ".mdb") Then
+            If i = 2 And conn.State = ConnectionState.Open And Not My.Computer.FileSystem.FileExists(BackupPath + _name + "_" + FechaHoy + ".mdb") Then
                 n = 0
                 valorn = True
                 'ProgressBar2.PerformStep()
                 _step = paso2
                 DDBBbackup()
-            ElseIf i = 2 And conn.State = ConnectionState.Open And My.Computer.FileSystem.FileExists(BackupPath + _name + "_" + fecha + ".mdb") Then
-                Kill(BackupPath + _name + "_" + fecha + ".mdb")
+            ElseIf i = 2 And conn.State = ConnectionState.Open And My.Computer.FileSystem.FileExists(BackupPath + _name + "_" + FechaHoy + ".mdb") Then
+                Kill(BackupPath + _name + "_" + FechaHoy + ".mdb")
                 n = 0
                 valorn = True
                 _step = paso2
